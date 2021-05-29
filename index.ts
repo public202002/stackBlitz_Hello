@@ -18,6 +18,6 @@ act1.finish(act2.exec)
 //   execute
 var finVal = act1.exec(1); console.log("finVal " + finVal + " expected 1+1 + 22 = 24")
 
-//test
+//test - call default built-in trivial task and default built-in trivial finish
 var actTest =  cochcarna.createActivity()
-var testFinish = actTest.exec(77); console.log("actTest " + testFinish)
+var testFinish = actTest.exec(77); console.log("actTest " + testFinish + " expected 77")
