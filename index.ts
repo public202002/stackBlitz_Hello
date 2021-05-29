@@ -8,11 +8,16 @@ const result = clicks.pipe(
 );
 result.subscribe(x => console.log(x));
 
+//COCHCARNA
 var act1 =  cochcarna.createActivity()
-act1.task = ()=>{console.log("act1")}
+act1.task = (num)=>{console.log("act1 " + num); return (num+1)}
 var act2 =  cochcarna.createActivity()
-act2.task = ()=>{console.log("act2")}
-
+act2.task = (num)=>{console.log("act2 " + num);return (num+22)}
+//   pipeline
 act1.finish(act2.exec)
+//   execute
+var finVal = act1.exec(1); console.log("finVal " + finVal + " expected 1+1 + 22 = 24")
 
-act1.exec()
+//test
+var actTest =  cochcarna.createActivity()
+var testFinish = actTest.exec(77); console.log("actTest " + testFinish)
